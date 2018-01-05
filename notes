@@ -1,0 +1,40 @@
+{
+    "jsonrpc": "2.0",
+    "method": "host.update",
+    "params": [
+        {
+        "hostid": "10387",
+        "inventory_mode": 0,
+        "inventory": {
+            "location": "Latvia, Riga"
+            }
+        },
+        {
+        "hostid": "10387",
+        "inventory_mode": 0,
+        "inventory": {
+            "location": "Latvia, Riga"
+            }
+        },
+    ],
+    "auth": "038e1d7b1735c6a5436ee9eae095879e",
+    "id": 1
+}
+
+
+{
+    "jsonrpc": "2.0",
+    "method": "trigger.update",
+    "params": [
+        {
+            "triggerid": "13938",
+            "status": 0
+        },
+        {
+            "triggerid": "13939",
+            "status": 0
+        }
+    ],
+    "auth": "0424bd59b807674191e7d77572075f33",
+    "id": 6
+}
