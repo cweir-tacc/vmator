@@ -38,3 +38,25 @@
     "auth": "0424bd59b807674191e7d77572075f33",
     "id": 6
 }
+
+
+---------------------------------------------------------------------------
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+from pyzabbix import ZabbixAPI ##sudo pip install pyzabbix
+import pprint
+import sys, os
+
+zapi = ZabbixAPI("http://xxxx.xxxx.xxxx")
+zapi.login("xxxxx", "xxxxx")
+print "Connected to Zabbix API Version %s" % zapi.api_version()
+
+class PP(pprint.PrettyPrinter):
+    def format(self, object, context, maxlevels, level):
+        if isinstance(object, unicode):
+            return (object.encode('utf8'), True, False)
+        return pprint.PrettyPrinter.format(self, object, context, maxlevels, level)
+
+inv = zapi.host.get(hostids='21708', output='extend', selectInventory =['site_address_a','location_lat','location_lon'])
+
+PP().pprint (inv)
